@@ -149,13 +149,33 @@ int main() {
 			break;
 		}
 	}
+	
+	//Bai tap 11
+	int n3,i3;
+	int number3 = 0;
+	int count3 = 0;
+	int prime3 = 2;
+	printf("nhap so luong so nguyen to can in\n");
+	scanf("%d",&n3);
+	while(number3<n3){
+		count3 = 0;
+		for( i3=1;i3<=prime3; i3++){
+			if(prime3%i==0){	
+				count3++;
+			}
+		}if(count3==2){
+			printf("\n so nguyen to la %d ",prime3);
+			number3++;
+		}
+	prime3++;
+	}
 
 	//Bai tap 13
     int day, month;
     printf("Nhap ngay sinh: ");
-    scanf("%d", &day);
+    scanf("%d",&day);
     printf("Nhap thang sinh: ");
-    scanf("%d", &month);
+    scanf("%d",&month);
     if ((month == 3 && day >= 21) || (month == 4 && day <= 19)) {
         printf("Cung hoang dao cua ban: Bach Duong\n");
     } else if ((month == 4 && day >= 20) || (month == 5 && day <= 20)) {
