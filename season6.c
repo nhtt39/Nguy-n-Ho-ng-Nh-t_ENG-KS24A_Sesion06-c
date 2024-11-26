@@ -62,7 +62,95 @@ int main() {
         }
     }
     
+    //Bai tap 5
+    int year, $month, days;
+    printf("Nhap nam: ");
+    scanf("%d", &year);
+    printf("Nhap thang: ");
+    scanf("%d", &$month);
+    int LeapYear = (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0));
+    if ($month == 1 || $month == 3 || $month == 5 || $month == 7 || $month == 8 || $month == 10 || $month == 12) {
+        days = 31;
+    } else if ($month == 4 || $month == 6 || $month == 9 || $month == 11) {
+        days = 30;
+    } else if ($month == 2) {
+        if (LeapYear) {
+            days = 29;
+        } else {
+            days = 28; 
+        }
+    } else {
+        printf("Thang khong hop le\n");
+        return 0;
+    }
+    printf("Thang %d trong nam %d co %d ngay\n", $month, year, days);
+    
     //Bai tap 6
+    int iiii;
+    for (iiii = 1; iiii <= 100; iiii++) {
+        if (iiii % 3 == 0 && iiii % 5 == 0) {
+            printf("FizzBuzz\n");
+        }
+        else if (iiii % 3 == 0) {
+            printf("Fizz\n");
+        }
+        else if (iiii % 5 == 0) {
+            printf("Buzz\n");
+        }
+        else {
+            printf("%d\n", iiii);
+        }
+    }
+    
+    //Bai tap 7
+    int o, p;
+    printf("Nhap vao mot so nguyen:\n");
+    scanf("%d",&o);
+    if (o <= 0){
+    	printf("ko phai so nguyen duong");
+    	return 1;
+	}
+	printf("cac uoc cua %d la:",o);
+	for (p = 1; p <= o; p++){
+		if(o % p == 0){
+			printf("%d\t",p);
+		}
+	}
+	
+	//Bai tap 8
+	double principal, rate, totalAmount, interest;
+    int months2;
+    printf("\nNhap vao so tien gui ban dau: ");
+    scanf("%lf", &principal);
+    printf("Nhap vao lai suat thang %: ");
+    scanf("%lf", &rate);
+    printf("Nhap vao so thang gui: ");
+    scanf("%d", &months2);
+    totalAmount = principal * pow((1 + rate / 100), months2);
+    interest = totalAmount - principal;
+    printf("Tien lai: %.3f\n", interest);
+    printf("Tien nhan duoc: %.3f\n", totalAmount);
+    
+    //Bai tap 10
+	int num2,iii;
+    printf("Nhap vao mot so nguyen\n");
+    scanf("%d",&num2);
+    if(num2 == 2){
+    	printf("%d la so nguyen to\n",num2);
+	}
+    if(num2 <= 1){
+    	printf("Khong phai so nguyen to\n");
+	}for (iii = 2;iii < num2;iii++){
+		if(num2 % iii == 0){
+			printf("%d khong phai so nguyen to\n",num2);
+			break;
+		}else{
+			printf("%d la so nguyen to\n",num2);
+			break;
+		}
+	}
+
+	//Bai tap 13
     int day, month;
     printf("Nhap ngay sinh: ");
     scanf("%d", &day);
@@ -94,31 +182,7 @@ int main() {
         printf("Cung hoang dao cua ban: Song Ngu\n");
     } else {
         printf("Ngay sinh khong hop le!\n");
-    }
+    }	
     
-    //Bai tap 7
-     int year, $month, days;
-    printf("Nhap nam: ");
-    scanf("%d", &year);
-    printf("Nhap thang: ");
-    scanf("%d", &$month);
-    int LeapYear = (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0));
-    if ($month == 1 || $month == 3 || $month == 5 || $month == 7 || $month == 8 || $month == 10 || $month == 12) {
-        days = 31;
-    } else if ($month == 4 || $month == 6 || $month == 9 || $month == 11) {
-        days = 30;
-    } else if ($month == 2) {
-        if (LeapYear) {
-            days = 29;
-        } else {
-            days = 28; 
-        }
-    } else {
-        printf("Thang khong hop le\n");
-        return 0;
-    }
-    printf("Thang %d trong nam %d co %d ngay\n", $month, year, days);
-
     return 0;
 }
-
